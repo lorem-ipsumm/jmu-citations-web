@@ -18,13 +18,6 @@ body {
   height: 100vh; 
 }
 
-.loading {
-  color: white;
-  display: block;
-  margin: auto;
-  font-size: 25pt;
-  animation: loading-animation infinite 3s ease;
-}
 
 .subtext {
   margin-top: 10px;

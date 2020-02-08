@@ -1,0 +1,160 @@
+.loading-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    height: 100%;
+  }
+  
+  .loading-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .loading {
+    font-size: 18pt;
+    margin-bottom: 30px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 30px;
+  }
+
+  .loading span {
+    color: white;
+  }
+  
+  .loading img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+  
+  .loading:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    height: 3px;
+    -webkit-animation: slide 2s ease-in-out;
+            animation: slide 2s ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    background-color: #B599CE;
+  }
+  
+  @-webkit-keyframes slide {
+    0% {
+      left: 0;
+      width: 0;
+    }
+    50% {
+      right: 0;
+      width: 100%;
+    }
+    90% {
+      right: 0;
+      width: 0;
+    }
+    100% {
+      right: 0;
+      width: 0;
+    }
+  }
+  
+  @keyframes slide {
+    0% {
+      left: 0;
+      width: 0;
+    }
+    50% {
+      right: 0;
+      width: 100%;
+    }
+    90% {
+      right: 0;
+      width: 0;
+    }
+    100% {
+      right: 0;
+      width: 0;
+    }
+  }
+  
+  .fact-wrapper {
+    width: 65%;
+    color: #171717;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  
+  .did-you-know {
+    font-weight: bold;
+    font-size: 12pt;
+    color: #1e1e1e;
+  }
+  
+  .fact {
+    font-size: 12pt;
+    color: #1e1e1e;
+  }
+  
+  .loading-message {
+    position: fixed;
+    bottom: 70px;
+    text-align: center;
+    opacity: 0;
+    width: 90%;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  
+  .loading-message span {
+    text-align: center;
+    font-size: 10pt;
+    color: #565556;
+  }
+  
+  .loading-message.visible {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }

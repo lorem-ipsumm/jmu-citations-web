@@ -1,6 +1,7 @@
 import React from 'react';
 import duke from './assets/duke_dog.png';
 import './App.css';
+import Loading from './components/Loading';
 
 
 
@@ -40,8 +41,6 @@ export default class App extends React.Component<any, any> {
         citation_data: responseData,
         citations_loaded: true
       });
-
-      console.log(this.state);
     });
   }
 
@@ -53,11 +52,13 @@ export default class App extends React.Component<any, any> {
     .then(response => response.json())
     .then((responseData) => {
       
-      // update state variables
-      this.setState({
-        metadata: responseData,
-        metadata_loaded: true
-      });
+      setTimeout(() => {
+        // update state variables
+        this.setState({
+          metadata: responseData,
+          metadata_loaded: true
+        });
+      },2000);
 
     })
     .catch(error => {
@@ -89,7 +90,7 @@ export default class App extends React.Component<any, any> {
       )
     } else {
       return(
-        <span className="loading">ur data is loading :)</span>
+        <Loading/>
       );
     }
   }
