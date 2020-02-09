@@ -5,7 +5,7 @@ import "../css/loading.css";
     This component shows the user a loading screen while data is prepared
 */
 
-export default class Loading extends React.Component<any, any>{
+export default class PieChar extends React.Component<any, any>{
     constructor(props : any){
         super(props);
 

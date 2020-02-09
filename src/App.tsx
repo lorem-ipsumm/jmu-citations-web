@@ -34,13 +34,22 @@ export default class App extends React.Component<any, any> {
 
   // get the citations from the db
   getCitations = () => {
-    fetch(" https://us-central1-ticket-counter-7b7ab.cloudfunctions.net/get_citations_today ")
+
+    // get a timestamp and force 2 digits
+    const now = new Date();
+    const month = ("0" + (now.getMonth()+1)).slice(-2);
+    const date = ("0" + (now.getDate())).slice(-2);
+
+    // make a get request to the citation endpoint
+    fetch("https://us-east1-ticket-counter-7b7ab.cloudfunctions.net/get_citations_today?month=" + month + "&date=" + date)
     .then(response => response.json())
     .then((responseData) => {
       this.setState({
         citation_data: responseData,
         citations_loaded: true
       });
+
+      console.log(this.state.citation_data);
     });
   }
 
@@ -52,13 +61,11 @@ export default class App extends React.Component<any, any> {
     .then(response => response.json())
     .then((responseData) => {
       
-      setTimeout(() => {
-        // update state variables
-        this.setState({
-          metadata: responseData,
-          metadata_loaded: true
-        });
-      },2000);
+      // update state variables
+      this.setState({
+        metadata: responseData,
+        metadata_loaded: true
+      });
 
     })
     .catch(error => {
