@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "ticket-counter-7b7ab"
+    "staging": "ticket-counter-7b7ab",
+    "default": "ticket-counter-7b7ab"
   }
 }
