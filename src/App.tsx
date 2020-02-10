@@ -1,11 +1,22 @@
 import React from 'react';
 import duke from './assets/duke_dog.png';
-import './css/App.css';
+import './App.css';
 import Loading from './components/Loading';
+import PieChart from './components/PieChart';
 
 
 
-export default class App extends React.Component<any, any> {
+
+
+interface MyState {
+  metadata: any,
+  citation_data: any,
+  citation_limit: string,
+  metadata_loaded: boolean,
+  citations_loaded: boolean
+}
+
+export default class App extends React.Component<any, MyState> {
 
 
   constructor(props : any) {
@@ -48,6 +59,8 @@ export default class App extends React.Component<any, any> {
         citation_data: responseData,
         citations_loaded: true
       });
+
+      console.log(this.state.citation_data);
     });
   }
 
@@ -91,26 +104,11 @@ export default class App extends React.Component<any, any> {
           <img src={duke} className="App-logo" alt="logo" />
           <span>Balance Charged {this.state.citation_limit}: ${this.formatNumber(this.state.citation_data.total_balance)}</span>
           <span className="subtext">From a total of <b>{this.state.citation_data.total_citations}</b> citations</span>
-          <div className="separator"></div>
-          <span className="description">This website tracks the number of citations given out by JMU each day. Right now there is just a live count, but there is more data coming soon!</span>
         </header>
       )
     } else {
       return(
         <Loading/>
-      );
-    }
-  }
-
-  // show notice if people are a player from wandr.land
-  showGameNotice = () => {
-    if (window.location.href.indexOf("player=true") !== -1) {
-      return(
-        <div id="game-notice" className="wrapper">
-          <div id="notice-wrapper">
-            <span>If you are a player of wandr.land, thank you for playing! I'm too busy to continue improving the game. I had a great time seeing how people play the game, and I hope you had a great time playing!</span>
-          </div>
-        </div>
       );
     }
   }
@@ -129,7 +127,6 @@ export default class App extends React.Component<any, any> {
   render() {
       return (
         <div className="App">
-          {this.showGameNotice()}
           {this.showData()} 
         </div>
       )
