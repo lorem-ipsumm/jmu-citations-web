@@ -1,8 +1,8 @@
 import React from 'react';
 import duke from './assets/duke_dog.png';
-import './App.css';
+import './css/App.css';
 import Loading from './components/Loading';
-import PieChart from './components/PieChart';
+// import PieChart from './components/PieChart';
 
 
 
@@ -102,8 +102,10 @@ export default class App extends React.Component<any, MyState> {
         <header className="App-header">
           <span>Last Updated: {this.getUpdatedString()}</span>
           <img src={duke} className="App-logo" alt="logo" />
-          <span>Balance Charged {this.state.citation_limit}: ${this.formatNumber(this.state.citation_data.total_balance)}</span>
-          <span className="subtext">From a total of <b>{this.state.citation_data.total_citations}</b> citations</span>
+          <span>Balance Charged {this.state.citation_limit}: <b>${this.formatNumber(this.state.citation_data.total_balance)}</b></span>
+          <span className="subtext">From a total of <b>{this.state.citation_data.total_citations}</b> parking citations</span>
+          <div className="separator"></div>
+          <span className="description subtext">This website tracks the number of parking citations given out by JMU each day. Right now there is just a live count, but there is more data coming soon!</span>
         </header>
       )
     } else {
