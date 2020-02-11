@@ -1,6 +1,6 @@
 import React from 'react';
 import "../css/loading.css";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 /*
     This component handles displaying a line graph of the data
@@ -27,11 +27,12 @@ export default class LineGraph extends React.Component<MyProps, any>{
                 }}
                 >
                     <XAxis dataKey="name" padding={{ left: 30, right: 30 }}/>
-                    <YAxis />
+                    <YAxis yAxisId="left" orientation="left" />
+                    <YAxis yAxisId="right" orientation="right" />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="balance" stroke="#8884d8" activeDot={{ r: 8 }} />
-                    <Line type="monotone" dataKey="citations" stroke="#82ca9d" />
+                    <Line yAxisId="left" type="monotone" dataKey="balance" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    <Line yAxisId="right" type="monotone" dataKey="citations" stroke="#82ca9d" />
                 </LineChart>
             </div>
         );
