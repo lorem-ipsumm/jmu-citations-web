@@ -3,7 +3,7 @@ body {
   background-color: #282c34;
   width: 100vw;
   height: 100vh; 
-  margin-top: 10px;
+  margin: 30px 0px;
   overflow-x: hidden;
 }
 
@@ -28,6 +28,7 @@ body {
   display: block;
   width: 55%;
   text-align: center;
+  color: #999b9e;
 }
 
 .separator {
@@ -58,6 +59,28 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.graph-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .graph-title {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 11pt;
+  }
+
+  .recharts-text {
+    font-size: 10pt;
+  }
+
+  .recharts-wrapper {
+    transform: translateX(-10px);
+  }
 }
 
 .App-link {

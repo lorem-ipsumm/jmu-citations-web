@@ -2,6 +2,7 @@ import React from 'react';
 import duke from './assets/duke_dog.png';
 import './css/App.css';
 import Loading from './components/Loading';
+import LineGraph from './components/LineGraph';
 // import PieChart from './components/PieChart';
 
 
@@ -11,9 +12,11 @@ import Loading from './components/Loading';
 interface MyState {
   metadata: any,
   citation_data: any,
+  week_data: any,
   citation_limit: string,
   metadata_loaded: boolean,
-  citations_loaded: boolean
+  citations_loaded: boolean,
+  week_data_loaded: boolean
 }
 
 export default class App extends React.Component<any, MyState> {
@@ -25,9 +28,11 @@ export default class App extends React.Component<any, MyState> {
     this.state = {
       metadata: {},
       citation_data: {},
+      week_data: {},
       citation_limit: "Today",
       metadata_loaded: false,
       citations_loaded: false,
+      week_data_loaded: false
     }
   }
 
@@ -61,6 +66,18 @@ export default class App extends React.Component<any, MyState> {
       });
 
       console.log(this.state.citation_data);
+    });
+
+    fetch("https://us-east1-ticket-counter-7b7ab.cloudfunctions.net/get_citations_week?month=" + month + "&date=" + date)
+    .then(response => response.json())
+    .then((responseData) => {
+      this.setState({
+        week_data: [responseData.graph_data],
+        week_data_loaded: true
+      });
+
+      console.log(this.state.week_data[0]);
+
     });
   }
 
@@ -101,11 +118,13 @@ export default class App extends React.Component<any, MyState> {
       return(
         <header className="App-header">
           <span>Last Updated: {this.getUpdatedString()}</span>
+          <span className="description subtext">This website tracks the number of parking citations given out by JMU each day. Right now there is just a live count, but there is more data coming soon!</span>
           <img src={duke} className="App-logo" alt="logo" />
           <span>Balance Charged {this.state.citation_limit}: <b>${this.formatNumber(this.state.citation_data.total_balance)}</b></span>
           <span className="subtext">From a total of <b>{this.state.citation_data.total_citations}</b> parking citations</span>
           <div className="separator"></div>
-          <span className="description subtext">This website tracks the number of parking citations given out by JMU each day. Right now there is just a live count, but there is more data coming soon!</span>
+          <LineGraph week_data={this.state.week_data[0]}/>
+          <div className="separator"></div>
         </header>
       )
     } else {

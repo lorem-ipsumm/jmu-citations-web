@@ -2,7 +2,7 @@ body {
   background-color: #282c34;
   width: 100vw;
   height: 100vh;
-  margin-top: 10px;
+  margin: 30px 0px;
   overflow-x: hidden;
 }
 
@@ -24,6 +24,7 @@ body {
   display: block;
   width: 55%;
   text-align: center;
+  color: #999b9e;
 }
 
 .separator {
@@ -64,6 +65,38 @@ body {
           justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.graph-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.graph-wrapper .graph-title {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11pt;
+}
+
+.graph-wrapper .recharts-text {
+  font-size: 10pt;
+}
+
+.graph-wrapper .recharts-wrapper {
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
 }
 
 .App-link {
