@@ -26,13 +26,13 @@ export default class LineGraph extends React.Component<MyProps, any>{
                 top: 5, right: 30, left: 20, bottom: 5,
                 }}
                 >
-                    <XAxis dataKey="name" padding={{ left: 30, right: 30 }}/>
+                    <XAxis dataKey="name" />
                     <YAxis yAxisId="left" orientation="left" />
                     <YAxis yAxisId="right" orientation="right" />
                     <Tooltip />
                     <Legend />
                     <Line yAxisId="left" type="monotone" dataKey="balance" stroke="#8884d8" activeDot={{ r: 8 }} />
-                    <Line yAxisId="right" type="monotone" dataKey="citations" stroke="#82ca9d" />
+                    <Line yAxisId="right" type="monotone" dataKey="citations" stroke="#82ca9d" activeDot={{ r: 8 }}/>
                 </LineChart>
             </div>
         );

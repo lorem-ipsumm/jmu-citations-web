@@ -19,6 +19,7 @@ interface MyState {
   week_data_loaded: boolean
 }
 
+
 export default class App extends React.Component<any, MyState> {
 
 
@@ -118,13 +119,14 @@ export default class App extends React.Component<any, MyState> {
       return(
         <header className="App-header">
           <span>Last Updated: {this.getUpdatedString()}</span>
-          <span className="description subtext">This website tracks the number of parking citations given out by JMU each day. Right now there is just a live count, but there is more data coming soon!</span>
+          <span className="description subtext">This website tracks the number of parking citations given out by JMU each day. <b>This is a personal project and is not directly affiliated with JMU.</b></span>
           <img src={duke} className="App-logo" alt="logo" />
           <span>Balance Charged {this.state.citation_limit}: <b>${this.formatNumber(this.state.citation_data.total_balance)}</b></span>
           <span className="subtext">From a total of <b>{this.state.citation_data.total_citations}</b> parking citations</span>
           <div className="separator"></div>
           <LineGraph week_data={this.state.week_data[0]}/>
           <div className="separator"></div>
+          <span className="description subtext">Go Dukes</span>
         </header>
       )
     } else {

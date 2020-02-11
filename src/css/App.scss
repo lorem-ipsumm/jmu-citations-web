@@ -3,15 +3,16 @@ body {
   background-color: #282c34;
   width: 100vw;
   height: 100vh; 
-  margin: 30px 0px;
   overflow-x: hidden;
 }
 
+.App {
+  padding: 30px 0px;
+}
 
 
 #root, .App{
-    width: 100%;
-    height: 100%;
+    overflow-x: hidden;
 }
 
 .wrapper { 
@@ -70,16 +71,38 @@ body {
 
   .graph-title {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 11pt;
   }
 
   .recharts-text {
-    font-size: 10pt;
+    font-size: 9pt;
+  }
+  
+  .recharts-tooltip-label {
+    color: #eaeaea;
+  }
+
+  .recharts-default-tooltip {
+
+    // override component CSS
+    background-color: #282c34 !important;
+    box-shadow: 1px 1px 5px #191919;
+    border-radius: 2px;
   }
 
   .recharts-wrapper {
     transform: translateX(6px);
+  }
+
+  .recharts-xAxis{
+    .recharts-cartesian-axis-ticks {
+      line {
+        display: none;
+      }
+
+    transform: translateY(5px);
+    }
   }
 }
 
