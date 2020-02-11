@@ -3,6 +3,7 @@ import duke from './assets/duke_dog.png';
 import './css/App.css';
 import Loading from './components/Loading';
 import LineGraph from './components/LineGraph';
+import LocationList from './components/LocationList';
 // import PieChart from './components/PieChart';
 
 
@@ -66,7 +67,7 @@ export default class App extends React.Component<any, MyState> {
         citations_loaded: true
       });
 
-      console.log(this.state.citation_data);
+      console.log(responseData);
     });
 
     fetch("https://us-east1-ticket-counter-7b7ab.cloudfunctions.net/get_citations_week?month=" + month + "&date=" + date)
@@ -76,9 +77,6 @@ export default class App extends React.Component<any, MyState> {
         week_data: [responseData.graph_data],
         week_data_loaded: true
       });
-
-      console.log(this.state.week_data[0]);
-
     });
   }
 
@@ -125,6 +123,8 @@ export default class App extends React.Component<any, MyState> {
           <span className="subtext">From a total of <b>{this.state.citation_data.total_citations}</b> parking citations</span>
           <div className="separator"></div>
           <LineGraph week_data={this.state.week_data[0]}/>
+          <div className="separator"></div>
+          <LocationList location_data={this.state.citation_data.location_count}/>
           <div className="separator"></div>
           <span className="description subtext">Go Dukes</span>
         </header>

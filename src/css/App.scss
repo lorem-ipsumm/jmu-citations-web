@@ -22,12 +22,12 @@ body {
 
 .subtext {
   margin-top: 10px;
-  font-size: calc(6px + 2vmin);
+  font-size: calc(4px + 2vmin);
 }
 
 .description {
   display: block;
-  width: 55%;
+  width: 40%;
   text-align: center;
   color: #999b9e;
 }
@@ -110,6 +110,48 @@ body {
   color: #61dafb;
 }
 
+.location-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.location-list-item-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.location-list-item {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0px;
+    span {
+      color: #cccccc;
+      display: block;
+      font-size: 11pt;
+      padding: 5px;
+    }
+
+    &.color {
+      background-color: #1d2026;
+    }
+
+    &.title {
+      span {
+        // override default color
+        color: white ;
+        margin-bottom: 15px;
+      }
+      
+    }
+}
+
+  
+
+
 #game-notice { 
    display: flex; 
    justify-content: center;
@@ -146,7 +188,15 @@ body {
 /* resizing */
 
 @media (max-width: 1000px) {
-    .description {
-        width: 90%;
-    }
+  .description {
+    width: 90%;
+  }
+
+  .location-list-item {
+    width: 85%; 
+  }
+
+  .separator {
+    width: 85%;
+  }
 }

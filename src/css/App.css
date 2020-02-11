@@ -19,12 +19,12 @@ body {
 
 .subtext {
   margin-top: 10px;
-  font-size: calc(6px + 2vmin);
+  font-size: calc(4px + 2vmin);
 }
 
 .description {
   display: block;
-  width: 55%;
+  width: 40%;
   text-align: center;
   color: #999b9e;
 }
@@ -125,6 +125,56 @@ body {
   color: #61dafb;
 }
 
+.location-list-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.location-list-item-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.location-list-item {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2px 0px;
+}
+
+.location-list-item span {
+  color: #cccccc;
+  display: block;
+  font-size: 11pt;
+  padding: 5px;
+}
+
+.location-list-item.color {
+  background-color: #1d2026;
+}
+
+.location-list-item.title span {
+  color: white;
+  margin-bottom: 15px;
+}
+
 #game-notice {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,6 +231,12 @@ body {
 @media (max-width: 1000px) {
   .description {
     width: 90%;
+  }
+  .location-list-item {
+    width: 85%;
+  }
+  .separator {
+    width: 85%;
   }
 }
 /*# sourceMappingURL=App.css.map */
