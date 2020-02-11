@@ -95,8 +95,8 @@ body {
 }
 
 .graph-wrapper .recharts-wrapper {
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
+  -webkit-transform: translateX(6px);
+          transform: translateX(6px);
 }
 
 .App-link {

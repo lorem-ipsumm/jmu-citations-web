@@ -19,7 +19,7 @@ export default class LineGraph extends React.Component<MyProps, any>{
             <div className="graph-wrapper wrapper">
                 <span className="graph-title">Citations and Balance Over Time</span>
                 <LineChart
-                width={400}
+                width={425}
                 height={300}
                 data={this.props.week_data}
                 margin={{
