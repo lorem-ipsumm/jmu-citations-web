@@ -19,7 +19,7 @@ export default class LocationList extends React.Component<MyProps, any>{
                     <span><b>Citations Given (today)</b></span>
                </div>
                {this.props.location_data.map((location : any,index : number) => 
-                <div className="location-list-item-wrapper">
+                <div className="location-list-item-wrapper" key={index}>
                 {index % 2 === 0 ? 
                     <div className="location-list-item">
                         <span>{location.name}</span>
