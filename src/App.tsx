@@ -96,8 +96,6 @@ export default class App extends React.Component<any, MyState> {
         metadata_loaded: true
       });
 
-      console.log(responseData);
-
     })
     .catch(error => {
       console.log(error);
