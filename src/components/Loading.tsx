@@ -81,7 +81,7 @@ export default class PieChar extends React.Component<any, any>{
                 </div>
 
                 <div className="loading-message">
-                    <span>It looks like your connection is weak. Please be patient. If this cotinues try refreshing the page.</span>
+                    <span>Your data is coming. Please be patient. If this cotinues try refreshing the page.</span>
                 </div>
             </div>
         );

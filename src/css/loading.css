@@ -153,7 +153,7 @@
   .loading-message span {
     text-align: center;
     font-size: 10pt;
-    color: #565556;
+    color: #c7c7c7;
   }
   
   .loading-message.visible {
