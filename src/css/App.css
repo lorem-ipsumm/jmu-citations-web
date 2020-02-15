@@ -28,8 +28,16 @@ body {
 }
 
 .sub-subtext {
+  display: block;
   margin-top: 10px;
-  font-size: calc(6pt + 1vmin);
+  padding: 0px 20vw;
+  font-size: calc(5pt + 3vmin);
+  color: #e0e0e0;
+  text-align: center;
+}
+
+.disclaimer {
+  font-weight: lighter;
 }
 
 .last-updated {
@@ -50,7 +58,7 @@ body {
 
 .header .header-text span {
   display: block;
-  margin: 5px 0px;
+  margin: 10px 0px;
 }
 
 .separator {
@@ -78,7 +86,7 @@ body {
   text-align: center;
   padding: 5px;
   background: #1d2026;
-  font-size: calc(2px + 2vmin);
+  font-size: calc(3px + 2vmin);
 }
 
 .App-wrapper {
@@ -125,6 +133,19 @@ body {
 
 .graph-wrapper .recharts-text {
   font-size: 9pt;
+}
+
+.graph-wrapper .recharts-default-legend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.graph-wrapper .recharts-default-legend li {
+  margin: 0px 20px;
 }
 
 .graph-wrapper .recharts-tooltip-label {

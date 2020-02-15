@@ -30,8 +30,17 @@ body {
 }
 
 .sub-subtext {
+  display: block;
   margin-top: 10px;
-  font-size: calc(6pt + 1vmin);
+  padding: 0px 20vw;
+  font-size: calc(5pt + 3vmin);
+  color: #e0e0e0;
+  text-align: center;
+}
+
+
+.disclaimer {
+  font-weight: lighter;
 }
 
 .last-updated{
@@ -49,7 +58,7 @@ body {
     padding: 30px 0px;
     span {
       display: block;
-      margin: 5px 0px;
+      margin: 10px 0px;
     }
   }
 }
@@ -80,7 +89,7 @@ body {
     text-align: center;
     padding: 5px;
     background: #1d2026;
-    font-size: calc(2px + 2vmin);
+    font-size: calc(3px + 2vmin);
   }
 }
 
@@ -110,6 +119,14 @@ body {
 
   .recharts-text {
     font-size: 9pt;
+  }
+
+  .recharts-default-legend {
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 0px 20px;
+    }
   }
   
   .recharts-tooltip-label {

@@ -143,8 +143,8 @@ export default class App extends React.Component<any, MyState> {
         <div className="App-wrapper">
           <div className="header">
             <div className="header-text">
-              <span className="main-text">This website tracks the number of parking citations given out by JMU each day.</span> 
-              <span className="sub-subtext">*This is a personal project and is not directly affiliated with JMU.*</span>
+              <span className="main-text">JMU Live Parking Citation Data</span> 
+              <span className="subtext last-updated">Last Updated: {this.getUpdatedString()}</span>
             </div>
           </div>
           <img src={duke} className="App-logo" alt="logo" />
@@ -152,12 +152,13 @@ export default class App extends React.Component<any, MyState> {
           <span className="subtext">From <b>{this.state.citation_data.total_citations}</b> parking citations</span>
           <div className="separator"></div>
           <LineGraph week_data={this.state.week_data[0]}/>
-          <span className="subtext last-updated">Last Updated: {this.getUpdatedString()}</span>
           <div className="separator"></div>
           <LocationList location_data={this.state.citation_data.location_count}/>
           <div className="separator"></div>
           <span className="description subtext">Go Dukes</span>
           <span className="visitor-count subtext"><span id="count">{this.formatNumber(this.state.metadata.visitors)} visitors</span></span>
+          <div className="separator"></div>
+          <span className="sub-subtext disclaimer">This is a personal project and is not directly affiliated with JMU</span>
         </div>
       )
     } else {
