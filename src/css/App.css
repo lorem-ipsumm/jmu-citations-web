@@ -49,6 +49,14 @@ body {
   }
 }
 
+.visitor-count #count {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  background: #1d2026;
+  font-size: calc(2px + 2vmin);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

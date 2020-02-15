@@ -4,7 +4,7 @@ import './css/App.css';
 import Loading from './components/Loading';
 import LineGraph from './components/LineGraph';
 import LocationList from './components/LocationList';
-// import PieChart from './components/PieChart';
+import Cookies from 'universal-cookie';
 
 
 
@@ -19,6 +19,8 @@ interface MyState {
   citations_loaded: boolean,
   week_data_loaded: boolean
 }
+
+const cookies = new Cookies();
 
 
 export default class App extends React.Component<any, MyState> {
@@ -36,6 +38,7 @@ export default class App extends React.Component<any, MyState> {
       citations_loaded: false,
       week_data_loaded: false
     }
+
   }
 
   // format a "last updated" string
@@ -67,7 +70,6 @@ export default class App extends React.Component<any, MyState> {
         citations_loaded: true
       });
 
-      console.log(responseData);
     });
 
     fetch("https://us-east1-ticket-counter-7b7ab.cloudfunctions.net/get_citations_week?month=" + month + "&date=" + date)
@@ -101,6 +103,29 @@ export default class App extends React.Component<any, MyState> {
 
   }
 
+  // update the visit counter if needed
+  update_visit_counter = () => {
+
+    // console.log(cookies.get("n"))
+    
+    if (cookies.get("visited") === undefined) {
+
+      // create date for five minutes in the future
+      let expire = new Date();
+      expire.setTime(expire.getTime() + (5*60*1000));
+
+      // set visited cookie
+      cookies.set('visited', true, {
+        path: '/',
+        expires: expire
+      });
+
+      // send a get request to the visitor_count url
+      // no need to parse a response
+      fetch("https://us-central1-ticket-counter-7b7ab.cloudfunctions.net/update_visitor_count");
+    }
+  }
+
 
   // add commas to numvber
   formatNumber = (str : String) => {
@@ -127,6 +152,7 @@ export default class App extends React.Component<any, MyState> {
           <LocationList location_data={this.state.citation_data.location_count}/>
           <div className="separator"></div>
           <span className="description subtext">Go Dukes</span>
+          <span className="visitor-count subtext"><span id="count">{this.formatNumber(this.state.metadata.visitors)} visitors</span></span>
         </header>
       )
     } else {
@@ -135,6 +161,9 @@ export default class App extends React.Component<any, MyState> {
       );
     }
   }
+
+
+  
 
   // run when the component succefully mounts
   componentDidMount = () => {
@@ -145,6 +174,7 @@ export default class App extends React.Component<any, MyState> {
     // get citation data
     this.getCitations();
 
+    this.update_visit_counter();
   }
 
   render() {
