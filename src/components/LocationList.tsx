@@ -10,11 +10,6 @@ interface MyProps {
 }
 
 export default class LocationList extends React.Component<MyProps, any>{
-
-    constructor(props : any) {
-        super(props);
-    }
-
     render() {
         if (this.props.location_data.length >= 1) {
             return(
