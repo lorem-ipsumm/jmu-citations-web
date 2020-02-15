@@ -7,7 +7,7 @@
 This is a personal project that displays various forms of parking citation data at my school, James Madison University. 
 
 # Thoughts
-Overall I'm pretty impressed with this project and how quickly. Here are some of my thoughts:
+Overall I'm pretty impressed with this project and how quickly I got it up and running. Here are some of my thoughts:
  - I built this website in a mobile-first style, because in theory it should reduce the amount of time I'd need to spend to get the site looking nice on both mobile and desktop.
  - For the first time ever, I decided to use [Typescript](https://www.typescriptlang.org/) to clean up the quirks and messyness of javascript. It didn't take that long to get used to using it, but I feel that I'm not really using it efficiently.
  - [Firebase](https://firebase.google.com/) makes having a cloud database so easy. Google is spooky but their services are hard to beat. When I started the project I went with a "make a working version and worry about efficiency later" outlook when it came to structuring the database. The cost of this has been fairly low so far (~$1/month), I can definitely get that lower, and possibly to $0/month.
