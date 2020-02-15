@@ -6,7 +6,7 @@ body {
 }
 
 .App {
-  padding: 30px 0px;
+  padding-bottom: 30px;
 }
 
 #root, .App {
@@ -17,16 +17,40 @@ body {
   width: 100%;
 }
 
-.subtext {
+.main-text {
   margin-top: 10px;
-  font-size: calc(4px + 2vmin);
+  font-size: calc(10pt + 1vmin);
 }
 
-.description {
-  display: block;
-  width: 40%;
-  text-align: center;
+.subtext {
+  margin-top: 10px;
+  font-size: calc(8pt + 1vmin);
+}
+
+.sub-subtext {
+  margin-top: 10px;
+  font-size: calc(6pt + 1vmin);
+}
+
+.last-updated {
   color: #999b9e;
+  margin-top: 10px;
+  font-size: calc(6pt + 1vmin);
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+.header .header-text {
+  background-color: #101216;
+  padding: 30px 0px;
+}
+
+.header .header-text span {
+  display: block;
+  margin: 5px 0px;
 }
 
 .separator {
@@ -57,7 +81,7 @@ body {
   font-size: calc(2px + 2vmin);
 }
 
-.App-header {
+.App-wrapper {
   background-color: #282c34;
   min-height: 100vh;
   display: -webkit-box;
@@ -236,9 +260,6 @@ body {
 
 /* resizing */
 @media (max-width: 1000px) {
-  .description {
-    width: 90%;
-  }
   .location-list-item {
     width: 85%;
   }
