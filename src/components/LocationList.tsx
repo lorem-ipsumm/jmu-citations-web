@@ -10,6 +10,26 @@ interface MyProps {
 }
 
 export default class LocationList extends React.Component<MyProps, any>{
+
+    constructor(props: any) {
+        super(props);
+
+        console.log(Object.keys(this.props.location_data).length);
+    }
+
+    format_percent = (location: any) => {
+
+        let percent = location.value / Object.keys(this.props.location_data).length;
+        percent = Math.trunc(percent * 100);
+
+        return(
+            <div className="location-list-item-value">
+                <span className="faded">( {percent}% )</span>
+                <span>{location.value}</span>
+            </div>
+        );
+    }
+
     render() {
         if (this.props.location_data.length >= 1) {
             return(
@@ -23,12 +43,12 @@ export default class LocationList extends React.Component<MyProps, any>{
                         {index % 2 === 0 ? 
                             <div className="location-list-item color">
                                 <span>{location.name}</span>
-                                <span>{location.value}</span>
+                                {this.format_percent(location)}
                             </div>
                         : 
                             <div className="location-list-item">
                                 <span>{location.name}</span>
-                                <span>{location.value}</span>
+                                {this.format_percent(location)}
                             </div>
                         }
                     </div>

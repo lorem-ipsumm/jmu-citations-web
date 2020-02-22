@@ -158,7 +158,7 @@ export default class App extends React.Component<any, MyState> {
           <span className="description subtext">Go Dukes</span>
           <span className="visitor-count subtext"><span id="count">{this.formatNumber(this.state.metadata.visitors)} visitors</span></span>
           <div className="separator"></div>
-          <span className="sub-subtext disclaimer">This is a personal project and is not directly affiliated with JMU</span>
+          <span className="sub-subtext disclaimer">This is a personal project and is not affiliated with JMU</span>
         </div>
       )
     } else {
