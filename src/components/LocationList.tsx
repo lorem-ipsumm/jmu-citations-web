@@ -13,15 +13,15 @@ export default class LocationList extends React.Component<MyProps, any>{
 
     constructor(props: any) {
         super(props);
-
-        console.log(Object.keys(this.props.location_data).length);
     }
 
     format_percent = (location: any) => {
 
+        // get the percentage  citations at x / total citations
         let percent = location.value / Object.keys(this.props.location_data).length;
         percent = Math.trunc(percent * 100);
 
+        // return with formatted spans
         return(
             <div className="location-list-item-value">
                 <span className="faded">( {percent}% )</span>
