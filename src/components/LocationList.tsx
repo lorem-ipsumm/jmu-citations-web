@@ -9,16 +9,57 @@ interface MyProps {
   location_data: any
 }
 
-export default class LocationList extends React.Component<MyProps, any>{
+interface MyState {
+    total_citations: number;
+}
+
+export default class LocationList extends React.Component<MyProps, MyState>{
 
     constructor(props: any) {
         super(props);
+
+
+        this.state = {
+            total_citations: 0
+        }
+
     }
 
+    componentDidMount = () => {
+        this.get_total();
+    }
+
+
+    // get the total number of tickets
+    get_total = () => {
+
+        let locations = this.props.location_data;
+        let total = 0;
+
+        // iterate through the location object
+        // and get the total number of citations 
+        for (var key in this.props.location_data) {
+            if (locations.hasOwnProperty(key)) {
+
+                // get value
+                total += locations[key].value;
+            }
+        } 
+
+
+        // update state
+        this.setState({
+            total_citations: total
+        });
+
+    }
+
+
+    // format percent
     format_percent = (location: any) => {
 
         // get the percentage  citations at x / total citations
-        let percent = location.value / Object.keys(this.props.location_data).length;
+        let percent = location.value / this.state.total_citations;
         percent = Math.trunc(percent * 100);
 
         // return with formatted spans
