@@ -63,12 +63,21 @@ export default class LocationList extends React.Component<MyProps, MyState>{
         percent = Math.trunc(percent * 100);
 
         // return with formatted spans
-        return(
-            <div className="location-list-item-value">
-                <span className="faded">( {percent}% )</span>
-                <span>{location.value}</span>
-            </div>
-        );
+        if (percent >= 1){
+            return(
+                <div className="location-list-item-value">
+                    <span className="faded">( {percent}% )</span>
+                    <span>{location.value}</span>
+                </div>
+            );
+        } else {
+            return(
+                <div className="location-list-item-value">
+                    <span className="faded">( &lt; 1% )</span>
+                    <span>{location.value}</span>
+                </div>
+            );
+        }
     }
 
     render() {
