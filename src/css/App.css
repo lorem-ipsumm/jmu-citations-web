@@ -70,14 +70,18 @@ body {
 
 .App-logo {
   height: 40vmin;
+  width: 40vmin;
   pointer-events: none;
   margin: 20px 0px;
+  border-radius: 100%;
+  -webkit-box-shadow: 2px 1px 5px #191919;
+          box-shadow: 2px 1px 5px #191919;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
+    -webkit-animation: App-logo-spin infinite 10s ease-in-out;
+            animation: App-logo-spin infinite 10s ease-in-out;
   }
 }
 
@@ -268,23 +272,31 @@ body {
 
 /** animations **/
 @-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  50% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
 }
 @keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  50% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
 }
 

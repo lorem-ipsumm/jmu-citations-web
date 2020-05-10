@@ -85,7 +85,7 @@ export default class LocationList extends React.Component<MyProps, MyState>{
             return(
                 <div className="location-list-wrapper wrapper">
                 <div className="location-list-item title">
-                        <span><b>Lot Name</b></span>
+                        <span><b>Location</b></span>
                         <span><b>Citations Given (today)</b></span>
                 </div>
                 {this.props.location_data.map((location : any,index : number) => 
@@ -109,7 +109,7 @@ export default class LocationList extends React.Component<MyProps, MyState>{
             return(
                 <div className="location-list-wrapper wrapper">
                     <div className="location-list-item title">
-                            <span><b>Lot Name</b></span>
+                            <span><b>Location</b></span>
                             <span><b>Citations Given (today)</b></span>
                     </div>
                         <div className="location-list-item-wrapper">

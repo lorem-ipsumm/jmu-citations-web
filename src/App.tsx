@@ -1,5 +1,6 @@
 import React from 'react';
-import duke from './assets/duke_dog.png';
+// import duke from './assets/duke_dog.png';
+import boulder from './assets/boulder.jpg';
 import './css/App.css';
 import Loading from './components/Loading';
 import LineGraph from './components/LineGraph';
@@ -65,6 +66,8 @@ export default class App extends React.Component<any, MyState> {
     fetch("https://us-east1-ticket-counter-7b7ab.cloudfunctions.net/get_citations_today?month=" + month + "&date=" + date)
     .then(response => response.json())
     .then((responseData) => {
+
+      console.log(responseData);
       this.setState({
         citation_data: responseData,
         citations_loaded: true
@@ -75,6 +78,7 @@ export default class App extends React.Component<any, MyState> {
     fetch("https://us-east1-ticket-counter-7b7ab.cloudfunctions.net/get_citations_week?month=" + month + "&date=" + date)
     .then(response => response.json())
     .then((responseData) => {
+
       this.setState({
         week_data: [responseData.graph_data],
         week_data_loaded: true
@@ -89,7 +93,7 @@ export default class App extends React.Component<any, MyState> {
     fetch("https://us-central1-ticket-counter-7b7ab.cloudfunctions.net/get_metadata")
     .then(response => response.json())
     .then((responseData) => {
-      
+
       // update state variables
       this.setState({
         metadata: responseData,
@@ -143,11 +147,11 @@ export default class App extends React.Component<any, MyState> {
         <div className="App-wrapper">
           <div className="header">
             <div className="header-text">
-              <span className="main-text">JMU Live Parking Citation Data</span> 
+              <span className="main-text">Live Boulder, CO Parking Citation Data</span> 
               <span className="subtext last-updated">Last Updated: {this.getUpdatedString()}</span>
             </div>
           </div>
-          <img src={duke} className="App-logo" alt="logo" />
+          <img src={boulder} className="App-logo" alt="city of boulder" />
           <span className="main-text">Balance Charged {this.state.citation_limit}: <b>${this.formatNumber(this.state.citation_data.total_balance)}</b></span>
           <span className="subtext">From <b>{this.state.citation_data.total_citations}</b> parking citations</span>
           <div className="separator"></div>
@@ -158,7 +162,9 @@ export default class App extends React.Component<any, MyState> {
           <span className="description subtext">Go Dukes</span>
           <span className="visitor-count subtext"><span id="count">{this.formatNumber(this.state.metadata.visitors)} visitors</span></span>
           <div className="separator"></div>
-          <span className="sub-subtext disclaimer">This is a personal project and is not affiliated with JMU</span>
+          {/*<span className="sub-subtext disclaimer">This is a personal project and is not affiliated with JMU</span>*/}
+          <span className="sub-subtext disclaimer">This site originally displayed JMU parking citation data, but due to parking services no longer operating during the pandemic, the site now tracks
+          parking citations in the city of Boulder.</span>
         </div>
       )
     } else {
