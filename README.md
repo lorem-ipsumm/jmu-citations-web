@@ -1,5 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/00047765-8e6d-4bb2-adf0-ef9816c4ece5/deploy-status)](https://app.netlify.com/sites/jmucitations/deploys)
 
+## notice
+Unfortunately the technique (read: exploit) that I was using to view the data has since been patched, so I no longer have access to the data. It was fun while it lasted!
+
 ![Alt text](git_assets/demo_small.png?raw=true "Title")
 
 
