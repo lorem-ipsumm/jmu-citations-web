@@ -7,7 +7,7 @@ Unfortunately the process that I was using to view the data has since been patch
 ![Alt text](git_assets/demo_small.png?raw=true "Title")
 
 
-## [JMU Live Parking Citation Data](https://jmucitations.netlify.com/)
+## JMU Live Parking Citation Data
 This is a personal project that displays various forms of parking citation data at my school, James Madison University. 
 
 # Thoughts
